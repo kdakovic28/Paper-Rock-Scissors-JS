@@ -2,14 +2,16 @@ const getUserChoice = userInput => {
   userInput = userInput.toLowerCase();
   if (userInput === 'rock' || userInput ==='paper' || userInput ==='scissors') {
    return userInput;  
-  } else {
+  } else if (userInput ==='bomb') {
+    return 'you win'
+  } else { 
     console.log('Error!');  
   } 
   }
-console.log( getUserChoice ('paper'));
+console.log( getUserChoice ('bomb'));
 //should print 'paper'
-let getComputerChoice = Math.floor(Math.random() * 3); {
- switch (Math.floor) {
+let getComputerChoice = () => {
+ switch (Math.floor(Math.random() * 3)){
   case 0:
     return 'rock';
     break;
@@ -50,4 +52,13 @@ if (userChoice === 'paper') {
 }
 };
 console.log(determineWinner('paper' , 'rock')); // prints something like 'The user won!
-  
+const playGame = () => {
+   const userChoice = getUserChoice('scissors');
+   const computerChoice = getComputerChoice();
+   console.log('You threw: ' + userChoice);
+   console.log('The computer threw:' + computerChoice);
+   console.log(determineWinner(userChoice, computerChoice));
+};
+
+playGame();
+
